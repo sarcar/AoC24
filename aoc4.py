@@ -15,11 +15,22 @@ SAXAMASAAA
 MAMMMXMMMM
 MXMXAXMASX
 XMASAMXMAS"""
+    input=""".M.S......
+..A..MSMS.
+.M.S.MAA..
+..A.ASMSM.
+.M.S.M....
+..........
+S.S.S.S.S.
+.A.A.A.A..
+M.M.M.M.M.
+.........."""
     input = input.split()
     input = fetch_aoc_input(4, 2024)
     for r in input:
         print(r)
     part_1(input)
+    part_2(input)
 
 
 def part_1(input):
@@ -83,6 +94,33 @@ def part_1(input):
 
     print(f"Final XMAS count = {count_XMAS}")
 
+
+def part_2(input):
+    lengths = [len(r) for r in input]
+    n_rows = len(lengths)
+    n_cols = lengths[0]
+
+    def iscrossMAS(vec):
+        l = len(vec)
+        w = ""
+        for i in range(l):
+            row, col = vec[i]
+            if row >= n_rows or col >= n_cols or row < 0 or col < 0:
+                return False
+            w += input[row][col]
+
+        return True if w == "MAS" or w == "SAM" else False
+
+    count_crossMAS = 0
+    for row in range(n_rows):
+        for col in range(n_cols):
+            vec1 = [(row - 1, col - 1), (row, col), (row + 1, col + 1)]
+            vec2 = [(row + 1, col - 1), (row, col), (row - 1, col + 1)]
+
+            if iscrossMAS(vec1) and iscrossMAS(vec2):
+                count_crossMAS+=1
+
+    print (f"Final X-MAS Count = {count_crossMAS}")
 
 if __name__ == "__main__":
     main()
