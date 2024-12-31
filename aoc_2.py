@@ -31,12 +31,7 @@ def check_level_safety(levels):
     direction = -1 if gaps[0] < 1 else +1
 
     for g in gaps:
-        if (
-            abs(g) > 3
-            or abs(g) == 0
-            or (direction > 0 and g < 0)
-            or (direction < 0 and g > 0)
-        ):
+        if abs(g) > 3 or abs(g) == 0 or (direction > 0 and g < 0) or (direction < 0 and g > 0):
             return False
     return True
 

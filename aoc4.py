@@ -62,42 +62,22 @@ def part_1(input):
                 count_XMAS += 1
 
             key = "NE"
-            vec = [
-                (row, col),
-                (row - 1, col + 1),
-                (row - 2, col + 2),
-                (row - 3, col + 3),
-            ]
+            vec = [(row, col), (row - 1, col + 1), (row - 2, col + 2), (row - 3, col + 3)]
             if isXMAS_new(vec):
                 count_XMAS += 1
 
             key = "SE"
-            vec = [
-                (row, col),
-                (row + 1, col + 1),
-                (row + 2, col + 2),
-                (row + 3, col + 3),
-            ]
+            vec = [(row, col), (row + 1, col + 1), (row + 2, col + 2), (row + 3, col + 3)]
             if isXMAS_new(vec):
                 count_XMAS += 1
 
             key = "SW"
-            vec = [
-                (row, col),
-                (row + 1, col - 1),
-                (row + 2, col - 2),
-                (row + 3, col - 3),
-            ]
+            vec = [(row, col), (row + 1, col - 1), (row + 2, col - 2), (row + 3, col - 3)]
             if isXMAS_new(vec):
                 count_XMAS += 1
 
             key = "NW"
-            vec = [
-                (row, col),
-                (row - 1, col - 1),
-                (row - 2, col - 2),
-                (row - 3, col - 3),
-            ]
+            vec = [(row, col), (row - 1, col - 1), (row - 2, col - 2), (row - 3, col - 3)]
             if isXMAS_new(vec):
                 count_XMAS += 1
 

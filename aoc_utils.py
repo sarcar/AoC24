@@ -30,6 +30,4 @@ def fetch_aoc_input(day, year, session_cookie=SESSION_COOKIE, raw_string=False):
             input_lines = response.text.strip().split("\n")
             return input_lines
     else:
-        raise Exception(
-            f"Failed to fetch input: {response.status_code} {response.reason}"
-        )
+        raise Exception(f"Failed to fetch input: {response.status_code} {response.reason}")
