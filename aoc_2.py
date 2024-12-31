@@ -18,7 +18,8 @@ def main():
     safe_without_dampener = process_report(input_lines, dampener=False)
     safe_with_dampener = process_report(input_lines, dampener=True)
 
-    print (f"{safe_without_dampener=} : {safe_with_dampener=}")
+    print(f"{safe_without_dampener=} : {safe_with_dampener=}")
+
 
 def check_level_safety(levels):
     gaps = [b - a for a, b in zip(levels, levels[1:])]
@@ -30,15 +31,21 @@ def check_level_safety(levels):
     direction = -1 if gaps[0] < 1 else +1
 
     for g in gaps:
-        if abs(g) > 3 or abs(g) == 0  or (direction > 0 and g < 0) or (direction < 0 and g > 0):
+        if (
+            abs(g) > 3
+            or abs(g) == 0
+            or (direction > 0 and g < 0)
+            or (direction < 0 and g > 0)
+        ):
             return False
     return True
+
 
 def process_report(input_lines, dampener):
     total_safe = 0
     for line, report in enumerate(input_lines):
         levels = [int(x) for x in report.split()]
-        safe_vector=[]
+        safe_vector = []
         safe = check_level_safety(levels)
         safe_vector.append(safe)
         if dampener:
@@ -49,7 +56,7 @@ def process_report(input_lines, dampener):
                 safe_vector.append(safe)
 
         if any(safe_vector):
-            total_safe +=1
+            total_safe += 1
 
         # DEBUG
         # print (f"{line=} : {levels=} : {safe_vector=} : {total_safe=}")
