@@ -1,6 +1,8 @@
 import requests
 
-SESSION_COOKIE = "53616c7465645f5fcc1be70354bceaa995118049e8ef8c80adabee5fcda9f971ac3c463508895852fa8bbb433a656ace413820cbd4047df00ff5e690fce93bd5"
+SESSION_COOKIE = (
+    "53616c7465645f5fcc1be70354bceaa995118049e8ef8c80adabee5fcda9f971ac3c463508895852fa8bbb433a656ace413820cbd4047df00ff5e690fce93bd5"
+)
 
 
 def fetch_aoc_input(day, year, session_cookie=SESSION_COOKIE, raw_string=False):

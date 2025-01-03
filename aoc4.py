@@ -15,7 +15,7 @@ SAXAMASAAA
 MAMMMXMMMM
 MXMXAXMASX
 XMASAMXMAS"""
-    input=""".M.S......
+    input = """.M.S......
 ..A..MSMS.
 .M.S.MAA..
 ..A.ASMSM.
@@ -118,9 +118,10 @@ def part_2(input):
             vec2 = [(row + 1, col - 1), (row, col), (row - 1, col + 1)]
 
             if iscrossMAS(vec1) and iscrossMAS(vec2):
-                count_crossMAS+=1
+                count_crossMAS += 1
 
-    print (f"Final X-MAS Count = {count_crossMAS}")
+    print(f"Final X-MAS Count = {count_crossMAS}")
+
 
 if __name__ == "__main__":
     main()
