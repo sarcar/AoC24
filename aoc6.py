@@ -110,6 +110,7 @@ if __name__ == "__main__":
 
     # PART 2
     print ("======= PART 2 =========")
+    print ("This takes about 45 mins on a MacBook M3")
     loops = 0
     loop_info=[]
     for r in range(X):
