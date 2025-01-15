@@ -42,7 +42,6 @@ class Antenna:
 
             return ret
 
-
 class AntiNode:
     def __init__(self, r, c):
         self.row = r
@@ -155,20 +154,11 @@ if __name__ == "__main__":
         for combo in itertools.combinations(antes, 2):
             a, b = combo
             print(f"{a} paired with {b}")
-            # harmonics = True
-            # r3, c3, r4, c4 = a.antinodes_at(b, harmonics)
-            # print(f"Antinodes at [{r3},{c3}] and [{r4},{c4}]")
-            # anti1, anti2 = AntiNode(r3, c3), AntiNode(r4, c4)
-            # mmgr.add_antinode(anti1)
-            # mmgr.add_antinode(anti2)
-
             harmonics = True # or False
             anti_vec = a.antinodes_at(b,harmonics)
             for r,c in anti_vec:
                 anti = AntiNode(r,c)
                 mmgr.add_antinode(anti)
-
-
 
     print(f"{mmgr.count_antinodes()} antinodes added.")
     # for anti in mmgr.get_antinode_list():
