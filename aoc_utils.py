@@ -43,9 +43,7 @@ def fetch_aoc_input(day, year, session_cookie=SESSION_COOKIE, raw_string=False, 
     #Always return data from the file
     with open(filename,"r") as f:
         buffer = f.read()
-        if raw_string:
-            return response.text
-        else:
-            input_lines = buffer.strip().split("\n")
-            return input_lines
+        input_lines = buffer.strip().split("\n")
+
+    return input_lines
 
